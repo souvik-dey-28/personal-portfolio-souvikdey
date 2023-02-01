@@ -281,7 +281,11 @@
     </style>
 </head>
 
-<body>
+<body onload="myFunction()" style="margin:0;">
+
+    <div id="loader"></div>
+    
+    <div style="display:none;" id="myDiv" class="animate-bottom">
 
     <nav class="navbar">
         <div class="content">
@@ -588,6 +592,7 @@
         </div>
     </div>
     </div>
+</div>
 
     <script>
         const body = document.querySelector("body");
@@ -640,7 +645,21 @@
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
         }
+
+        // loader js
+
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 3000);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
     </script>
+   
 </body>
 
 </html>
